@@ -1,7 +1,13 @@
 *** Settings ***
 Library    ../../resources/examples/steps.py
+Resource    ../../resources/keyword_001.robot
 
 *** Test Cases ***
+Test reproduce bug
+    [Tags]    reproduce-001
+    Given Initial Web Browser    https://docs.google.com/spreadsheets/d/1hlibZBuIkUuqtNohwBWo5G5x3MUuL5AjyZ2KKgLehjI
+    And See Google Sheet Contain Tab Names Sequentially
+    ...    sheet_001    sheet_002    sheet_003
 
 Test with fields: Preconditions
     [Tags]    qase.fields:{ "preconditions": "Write your precondition here." }

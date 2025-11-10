@@ -1,9 +1,6 @@
-robotframework~=7.2
 qase-robotframework
-robotframework-seleniumlibrary
+robotframework-browser
+robotframework-browser-batteries
 robotframework-pabot
 robotframework-randomlibrary
 robotframework-tidy
-selenium~=4.28.0
-webdriver-manager
-
