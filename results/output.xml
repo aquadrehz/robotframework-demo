@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.5 on darwin)" generated="2025-11-10T16:43:53.671424" rpa="false" schemaversion="5">
+<suite id="s1" name="Robotframework-Demo" source="/Users/shumnan/PycharmProjects/robotframework-demo">
+<suite id="s1-s1" name="Tests" source="/Users/shumnan/PycharmProjects/robotframework-demo/tests">
+<suite id="s1-s1-s1" name="Examples" source="/Users/shumnan/PycharmProjects/robotframework-demo/tests/examples">
+<suite id="s1-s1-s1-s1" name="Fields" source="/Users/shumnan/PycharmProjects/robotframework-demo/tests/examples/fields.robot">
+<test id="s1-s1-s1-s1-t1" name="Test reproduce bug" line="6">
+<kw name="Given Initial Web Browser" owner="keyword_001">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-11-10T16:43:55.062920" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "/Users/shumnan/PycharmProjects/robotframework-demo/results/browser/traces/temp/84b3f5ce-77f9-4a8c-973e-226d456ee254"}</msg>
+<msg time="2025-11-10T16:43:55.063436" level="INFO">Starting GRPC process /Users/shumnan/.local/share/virtualenvs/robotframework-demo-vTArx6VK/lib/python3.13/site-packages/BrowserBatteries/bin/grpc_server using at 127.0.0.1:59145</msg>
+<msg time="2025-11-10T16:43:57.011022" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"/Users/shumnan/PycharmProjects/robotframework-demo/results/browser/traces/temp/84b3f5ce-77f9-4a8c-973e-226d456ee254"}</msg>
+<arg>chromium</arg>
+<arg>headless=false</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-11-10T16:43:55.062566" elapsed="1.948745"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<msg time="2025-11-10T16:43:57.013867" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 800,
+    "height": 600
+  }
+}</msg>
+<msg time="2025-11-10T16:43:57.035763" level="INFO">Successfully created context. </msg>
+<msg time="2025-11-10T16:43:57.035821" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 800, 'height': 600}}</msg>
+<arg>viewport={'width': 800, 'height': 600}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="PASS" start="2025-11-10T16:43:57.011907" elapsed="0.023969"/>
+</kw>
+<kw name="Set Browser Timeout" owner="Browser">
+<arg>20s</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="PASS" start="2025-11-10T16:43:57.036008" elapsed="0.001785"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-11-10T16:44:00.680137" level="INFO">Successfully initialized new page object and opened url: https://docs.google.com/spreadsheets/d/1hlibZBuIkUuqtNohwBWo5G5x3MUuL5AjyZ2KKgLehjI</msg>
+<arg>${url}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-11-10T16:43:57.037900" elapsed="3.642549"/>
+</kw>
+<arg>https://docs.google.com/spreadsheets/d/1hlibZBuIkUuqtNohwBWo5G5x3MUuL5AjyZ2KKgLehjI</arg>
+<status status="PASS" start="2025-11-10T16:43:55.062158" elapsed="5.618504"/>
+</kw>
+<kw name="And See Google Sheet Contain Tab Names Sequentially" owner="keyword_001">
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-11-10T16:44:00.681657" level="INFO">Length is 3.</msg>
+<msg time="2025-11-10T16:44:00.681716" level="INFO">${tab_amount} = 3</msg>
+<var>${tab_amount}</var>
+<arg>${gg_tab_names}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-11-10T16:44:00.681524" elapsed="0.000207"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-11-10T16:44:00.712430" level="INFO">Text: 'qase_reproduct_bug'</msg>
+<msg time="2025-11-10T16:44:00.712565" level="INFO">${ggsheet_title} = qase_reproduct_bug</msg>
+<var>${ggsheet_title}</var>
+<arg>//input[contains(@class,'docs-title-input')]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-10T16:44:00.681807" elapsed="0.030775"/>
+</kw>
+<kw name="Get Url" owner="Browser">
+<msg time="2025-11-10T16:44:00.714450" level="INFO">${ggsheet_url} = https://docs.google.com/spreadsheets/d/1hlibZBuIkUuqtNohwBWo5G5x3MUuL5AjyZ2KKgLehjI/edit?gid=0#gid=0</msg>
+<var>${ggsheet_url}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2025-11-10T16:44:00.712798" elapsed="0.001679"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-11-10T16:44:00.714730" level="INFO">Google Sheet Title: qase_reproduct_bug</msg>
+<arg>Google Sheet Title: ${ggsheet_title}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-11-10T16:44:00.714584" elapsed="0.000171"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-11-10T16:44:00.714891" level="INFO">URL: https://docs.google.com/spreadsheets/d/1hlibZBuIkUuqtNohwBWo5G5x3MUuL5AjyZ2KKgLehjI/edit?gid=0#gid=0</msg>
+<arg>URL: ${ggsheet_url}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-11-10T16:44:00.714811" elapsed="0.000101"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-11-10T16:44:00.732864" level="INFO">Waited for Element with selector (//*[@class="docs-sheet-tab-name"])[1] at state stable</msg>
+<arg>(//*[@class="docs-sheet-tab-name"])[1]</arg>
+<arg>stable</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-11-10T16:44:00.714971" elapsed="0.018012"/>
+</kw>
+<kw name="Wait For Condition" owner="Browser">
+<kw name="Get Element Count" owner="Browser">
+<arg>//*[@class="docs-sheet-tab-name"]</arg>
+<arg>==</arg>
+<arg>3</arg>
+<arg>Tab in Google Sheet is missing. Expected: 3</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<status status="PASS" start="2025-11-10T16:44:00.733640" elapsed="0.040872"/>
+</kw>
+<arg>Element Count</arg>
+<arg>//*[@class="docs-sheet-tab-name"]</arg>
+<arg>==</arg>
+<arg>${tab_amount}</arg>
+<arg>Tab in Google Sheet is missing. Expected: ${tab_amount}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for a condition, defined with Browser getter keywords to become True.</doc>
+<status status="PASS" start="2025-11-10T16:44:00.733105" elapsed="0.041509"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-11-10T16:44:00.774883" level="INFO">${count} = 1</msg>
+<var>${count}</var>
+<arg>1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-11-10T16:44:00.774726" elapsed="0.000173"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-11-10T16:44:00.782824" level="INFO">Text: 'sheet_001'</msg>
+<msg time="2025-11-10T16:44:00.782922" level="INFO">${actual_name} = sheet_001</msg>
+<var>${actual_name}</var>
+<arg>(//*[@class="docs-sheet-tab-name"])[${count}]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-10T16:44:00.775183" elapsed="0.007756"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${actual_name}</arg>
+<arg>${name}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-11-10T16:44:00.783049" elapsed="0.000204"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-11-10T16:44:00.783532" level="INFO">${count} = 2</msg>
+<var>${count}</var>
+<arg>${count} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-11-10T16:44:00.783380" elapsed="0.000166"/>
+</kw>
+<var name="${name}">sheet_001</var>
+<status status="PASS" start="2025-11-10T16:44:00.775108" elapsed="0.008461"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-11-10T16:44:00.790787" level="INFO">Text: 'sheet_002'</msg>
+<msg time="2025-11-10T16:44:00.790886" level="INFO">${actual_name} = sheet_002</msg>
+<var>${actual_name}</var>
+<arg>(//*[@class="docs-sheet-tab-name"])[${count}]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-10T16:44:00.783700" elapsed="0.007201"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${actual_name}</arg>
+<arg>${name}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-11-10T16:44:00.791018" elapsed="0.000187"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-11-10T16:44:00.791411" level="INFO">${count} = 3</msg>
+<var>${count}</var>
+<arg>${count} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-11-10T16:44:00.791267" elapsed="0.000158"/>
+</kw>
+<var name="${name}">sheet_002</var>
+<status status="PASS" start="2025-11-10T16:44:00.783639" elapsed="0.007811"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-11-10T16:44:00.798014" level="INFO">Text: 'sheet_003'</msg>
+<msg time="2025-11-10T16:44:00.798092" level="INFO">${actual_name} = sheet_003</msg>
+<var>${actual_name}</var>
+<arg>(//*[@class="docs-sheet-tab-name"])[${count}]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-10T16:44:00.791587" elapsed="0.006519"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${actual_name}</arg>
+<arg>${name}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-11-10T16:44:00.798204" elapsed="0.000148"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-11-10T16:44:00.798527" level="INFO">${count} = 4</msg>
+<var>${count}</var>
+<arg>${count} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-11-10T16:44:00.798409" elapsed="0.000132"/>
+</kw>
+<var name="${name}">sheet_003</var>
+<status status="PASS" start="2025-11-10T16:44:00.791521" elapsed="0.007042"/>
+</iter>
+<var>${name}</var>
+<value>@{gg_tab_names}</value>
+<status status="PASS" start="2025-11-10T16:44:00.774956" elapsed="0.023634"/>
+</for>
+<arg>sheet_001</arg>
+<arg>sheet_002</arg>
+<arg>sheet_003</arg>
+<doc>The result (log.html and console) Show Error:
+Calling method 'end_test' of listener 'qase.robotframework.Listener' failed: TypeError: sequence item 2: expected str instance, int found</doc>
+<status status="PASS" start="2025-11-10T16:44:00.681143" elapsed="0.117503"/>
+</kw>
+<msg time="2025-11-10T16:44:00.806889" level="INFO">Switching context to context=4e5e9155-4e1e-4afa-9ce3-cfcdbc4003a5 in CURRENT</msg>
+<msg time="2025-11-10T16:44:00.812643" level="INFO">Successfully changed active context: context=4e5e9155-4e1e-4afa-9ce3-cfcdbc4003a5</msg>
+<msg time="2025-11-10T16:44:00.843627" level="INFO">Successfully closed Context</msg>
+<tag>reproduce-001</tag>
+<status status="PASS" start="2025-11-10T16:43:55.059704" elapsed="5.739074"/>
+</test>
+<status status="PASS" start="2025-11-10T16:43:54.959798" elapsed="5.884301"/>
+</suite>
+<status status="PASS" start="2025-11-10T16:43:54.958712" elapsed="5.887826"/>
+</suite>
+<status status="PASS" start="2025-11-10T16:43:54.957718" elapsed="5.889204"/>
+</suite>
+<status status="PASS" start="2025-11-10T16:43:54.950720" elapsed="5.896417"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">reproduce-001</stat>
+</tag>
+<suite>
+<stat name="Robotframework-Demo" id="s1" pass="1" fail="0" skip="0">Robotframework-Demo</stat>
+<stat name="Tests" id="s1-s1" pass="1" fail="0" skip="0">Robotframework-Demo.Tests</stat>
+<stat name="Examples" id="s1-s1-s1" pass="1" fail="0" skip="0">Robotframework-Demo.Tests.Examples</stat>
+<stat name="Fields" id="s1-s1-s1-s1" pass="1" fail="0" skip="0">Robotframework-Demo.Tests.Examples.Fields</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-11-10T16:44:00.801361" level="ERROR">Calling method 'end_test' of listener 'qase.robotframework.Listener' failed: TypeError: sequence item 2: expected str instance, int found</msg>
+</errors>
+</robot>
